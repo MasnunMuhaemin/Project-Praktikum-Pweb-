@@ -5,19 +5,24 @@
     <title>@yield('title', 'Admin Panel')</title>
     @vite(['resources/css/app.css', 'resources/js/app.js']) 
 </head>
-<body class="bg-gray-100 min-h-screen flex">
-
-    <aside class="w-64 bg-white shadow-lg min-h-screen p-6">
-        <h2 class="text-xl font-bold mb-6 text-blue-600">Admin Panel</h2>
-        <nav class="space-y-4">
-            <a href="#" class="block text-gray-700 hover:text-blue-500">Dashboard</a>
-            <a href="{{ route('products.index') }}" class="block text-gray-700 hover:text-blue-500">Product</a>
-            <a href="#" class="block text-gray-700 hover:text-blue-500">Settings</a>
+    <body class="bg-gray-100 min-h-screen flex">
+        
+        <aside class="w-64 bg-white shadow-lg min-h-screen p-6">
+            <h2 class="text-xl font-bold mb-6 text-blue-600">Admin Panel</h2>
+            <nav class="space-y-4">
+                <a href="{{ route('admin.dashboard') }}"
+                class="block hover:text-blue-500 {{ request()->routeIs('admin.dashboard') ? 'text-blue-600 font-semibold' : 'text-gray-700' }}">
+                    Dashboard
+                </a>
+                <a href="{{ route('products.index') }}"
+                class="block hover:text-blue-500 {{ request()->routeIs('products.*') ? 'text-blue-600 font-semibold' : 'text-gray-700' }}">
+                Product
+            </a>
             <form id="logout-form" action="{{ route('admin.logout') }}" method="POST" class="hidden">
                 @csrf
-            </form>
-
-            <a href="#" class="block text-gray-700 hover:text-red-500"
+                </form>
+                
+                <a href="#" class="block text-gray-700 hover:text-red-500"
                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                 Logout
             </a>
@@ -31,5 +36,9 @@
         </div>
     </main>
 
-</body>
+    @stack('scripts')
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    </body>
 </html>
+
+

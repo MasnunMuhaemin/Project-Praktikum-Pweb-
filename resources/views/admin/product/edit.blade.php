@@ -4,7 +4,7 @@
 @section('page-title', 'Edit Produk')
 
 @section('content')
-<form action="{{ route('products.update', $product->id) }}" method="POST" class="space-y-4 bg-white p-6 rounded shadow">
+<form action="{{ route('products.update', $product->id) }}" method="POST"  enctype="multipart/form-data" class="space-y-4 bg-white p-6 rounded shadow">
     @csrf
     @method('PUT')
 
@@ -36,6 +36,14 @@
     <div>
         <label>Diskon (%)</label>
         <input type="number" name="discount" class="w-full border px-3 py-2 rounded" value="{{ old('discount', $product->discount) }}">
+    </div>
+
+    <div>
+        <label>Gambar (biarkan kosong jika tidak diubah)</label>
+        <input type="file" name="img" accept="image/*" class="w-full border px-3 py-2 rounded">
+        <div class="mt-2">
+            <img src="{{ asset('storage/' . $product->img) }}" class="w-24 h-24 object-cover rounded" alt="preview">
+        </div>
     </div>
 
     <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Update</button>
