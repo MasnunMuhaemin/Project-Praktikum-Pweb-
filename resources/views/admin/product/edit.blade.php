@@ -46,6 +46,13 @@
         </div>
     </div>
 
-    <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Update</button>
+    <div class="flex justify-end space-x-2">
+    <a href="{{ route('products.index') }}" class="bg-gray-300 text-gray-800 px-4 py-2 rounded hover:bg-gray-400">
+        Batal
+    </a>
+    <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+        Simpan
+    </button>
+</div>
 </form>
 @endsection

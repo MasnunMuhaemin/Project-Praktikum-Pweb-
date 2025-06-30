@@ -5,9 +5,9 @@
     <title>@yield('title', 'Admin Panel')</title>
     @vite(['resources/css/app.css', 'resources/js/app.js']) 
 </head>
-    <body class="bg-gray-100 min-h-screen flex">
+    <body class=" min-h-screen flex">
         
-        <aside class="w-64 bg-white shadow-lg min-h-screen p-6">
+        <aside class="w-64 bg-gray-300 shadow-lg min-h-screen p-6">
             <h2 class="text-xl font-bold mb-6 text-blue-600">Admin Panel</h2>
             <nav class="space-y-4">
                 <a href="{{ route('admin.dashboard') }}"
