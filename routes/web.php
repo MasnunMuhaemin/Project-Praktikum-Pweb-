@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -15,6 +16,7 @@ Route::post('/admin/logout', [AuthController::class, 'logout'])->name('admin.log
 
 // Dashboard admin dengan proteksi auth
 Route::middleware(['auth'])->group(function () {
+    Route::resource('products', ProductController::class);
     Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
     Route::post('/admin/logout', [AuthController::class, 'logout'])->name('admin.logout');
 });
