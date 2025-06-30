@@ -13,7 +13,8 @@
 <table class="w-full bg-white rounded shadow text-sm">
     <thead>
         <tr class="bg-gray-100 text-left">
-            <th class="p-3">Gambar</th> <!-- Tambahan -->
+            <th>No. </th>
+            <th class="p-3">Gambar</th> 
             <th class="p-3">Kode</th>
             <th class="p-3">Nama</th>
             <th class="p-3">Harga</th>
@@ -25,6 +26,7 @@
     <tbody>
         @forelse ($products as $product)
         <tr class="border-b">
+            <td>{{ $loop->iteration }}</td>
             <td class="p-3">
                 <img src="{{ asset('storage/' . $product->img) }}" alt="gambar" class="w-16 h-16 object-cover rounded">
             </td>

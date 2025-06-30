@@ -16,4 +16,9 @@ class Product extends Model
         'stock',
         'discount',
     ];
+
+    public function wishlists()
+    {
+        return $this->hasMany(Wishlist::class);
+    }
 }

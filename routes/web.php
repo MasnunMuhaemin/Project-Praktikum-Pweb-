@@ -17,6 +17,7 @@ Route::post('/admin/logout', [AuthController::class, 'logout'])->name('admin.log
 // Dashboard admin dengan proteksi auth
 Route::middleware(['auth'])->group(function () {
     Route::resource('products', ProductController::class);
+    Route::resource('users', \App\Http\Controllers\UserController::class);
     Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
     Route::post('/admin/logout', [AuthController::class, 'logout'])->name('admin.logout');
 });
