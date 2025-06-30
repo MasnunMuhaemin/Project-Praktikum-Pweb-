@@ -2,7 +2,7 @@
 
 @section('title', 'Dashboard Admin')
 
-@section('page-title', 'Selamat Datang, Admin')
+@section('page-title', 'Selamat Datang, ' . $user->name)
 
 @section('content')
     <p class="text-gray-600">Ini adalah halaman dashboard admin dengan sidebar.</p>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>@yield('title', 'Admin Panel')</title>
-    @vite(['resources/css/app.css', 'resources/js/app.js']) {{-- Panggil Tailwind & JS --}}
+    @vite(['resources/css/app.css', 'resources/js/app.js']) 
 </head>
 <body class="bg-gray-100 min-h-screen flex">
 
@@ -13,7 +13,14 @@
             <a href="#" class="block text-gray-700 hover:text-blue-500">Dashboard</a>
             <a href="#" class="block text-gray-700 hover:text-blue-500">Users</a>
             <a href="#" class="block text-gray-700 hover:text-blue-500">Settings</a>
-            <a href="#" class="block text-gray-700 hover:text-red-500">Logout</a>
+            <form id="logout-form" action="{{ route('admin.logout') }}" method="POST" class="hidden">
+                @csrf
+            </form>
+
+            <a href="#" class="block text-gray-700 hover:text-red-500"
+                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                Logout
+            </a>
         </nav>
     </aside>
 
