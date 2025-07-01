@@ -15,7 +15,7 @@ class ProductSeeder extends Seeder
     {
         Product::create([
             'kode_product' => 'PRD001',
-            'name' => 'Produk A',
+            'name' => 'Casing 11 Pro Max',
             'description' => 'Deskripsi Produk A',
             'img' => 'produk_a.jpg',
             'price' => 100000,
@@ -25,7 +25,7 @@ class ProductSeeder extends Seeder
 
         Product::create([
             'kode_product' => 'PRD002',
-            'name' => 'Produk B',
+            'name' => 'Casing 11 Pro',
             'description' => 'Deskripsi Produk B',
             'img' => 'produk_b.jpg',
             'price' => 150000,

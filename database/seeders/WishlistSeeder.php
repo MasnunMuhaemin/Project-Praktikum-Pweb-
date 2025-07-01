@@ -14,12 +14,12 @@ class WishlistSeeder extends Seeder
     public function run(): void
     {
         Wishlist::create([
-            'user_id' => 1,
+            'user_id' => 3,
             'product_id' => 1,
         ]);
 
         Wishlist::create([
-            'user_id' => 1,
+            'user_id' => 3,
             'product_id' => 2,
         ]);
 

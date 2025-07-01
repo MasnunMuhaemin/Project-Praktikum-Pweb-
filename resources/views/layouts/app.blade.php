@@ -22,6 +22,11 @@
                     class="block hover:text-blue-500 {{ request()->routeIs('users.*') ? 'text-blue-600 font-semibold' : 'text-gray-700' }}">
                     Users
                 </a>
+                <a href="{{ route('wishlists.index') }}"
+   class="block hover:text-blue-500 {{ request()->routeIs('wishlists.*') ? 'text-blue-600 font-semibold' : 'text-gray-700' }}">
+   Wishlist
+</a>
+
             <form id="logout-form" action="{{ route('admin.logout') }}" method="POST" class="hidden">
                 @csrf
                 </form>

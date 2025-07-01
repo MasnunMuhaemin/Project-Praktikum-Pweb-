@@ -29,5 +29,13 @@ class UserSeeder extends Seeder
             'no_hp' => '089998887777',
             'password' => Hash::make('password'),
         ]);
+
+        User::create([
+            'name' => 'Pelanggan A',
+            'email' => 'pelanggan@example.com',
+            'alamat' => 'Jl. Pemakai React',
+            'no_hp' => '099834324334',
+            'password' => Hash::make('password'),
+        ]);
     }
 }

@@ -43,7 +43,6 @@
     </tbody>
 </table>
 @push('scripts')
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         document.querySelectorAll('.delete-user-btn').forEach(button => {
             button.addEventListener('click', function () {
